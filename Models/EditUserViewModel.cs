@@ -2,8 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CSHarpCHarles2.Models
 {
-    public class CreateUserViewModel
+    public class EditUserViewModel
     {
+        [Required]
+        public string Id { get; set; } = string.Empty;
+
         [Required]
         [EmailAddress]
         public string Email { get; set; } = string.Empty;
@@ -13,11 +16,9 @@ namespace CSHarpCHarles2.Models
         public string DisplayName { get; set; } = string.Empty;
 
         [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; } = string.Empty;
+        [Display(Name = "Employment Status")]
+        public EmploymentStatus EmploymentStatus { get; set; } = EmploymentStatus.Active;
 
-        [Required]
-        [Display(Name = "Department Role")]
-        public string Role { get; set; } = string.Empty;
+        public bool IsSuperAdmin { get; set; }
     }
 }

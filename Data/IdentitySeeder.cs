@@ -1,3 +1,4 @@
+using CSHarpCHarles2.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace CSHarpCHarles2.Data
@@ -15,7 +16,7 @@ namespace CSHarpCHarles2.Data
         public static async Task SeedAsync(IServiceProvider services)
         {
             var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-            var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
             foreach (var role in Roles)
             {
@@ -31,11 +32,12 @@ namespace CSHarpCHarles2.Data
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
             if (adminUser == null)
             {
-                adminUser = new IdentityUser
+                adminUser = new ApplicationUser
                 {
                     UserName = adminEmail,
                     Email = adminEmail,
-                    EmailConfirmed = true
+                    EmailConfirmed = true,
+                    DisplayName = "Super Admin"
                 };
 
                 var createResult = await userManager.CreateAsync(adminUser, adminPassword);

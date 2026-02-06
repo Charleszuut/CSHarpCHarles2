@@ -7,7 +7,7 @@
     <script type="importmap"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CSHarpCHarles2.styles.css" asp-append-version="true" />
@@ -48,10 +48,6 @@
                     }
                 </nav>
                 <div class="app-header__user">
-                    <div class="user-meta">
-                        <span class="user-meta__name">@User.Identity?.Name</span>
-                        <span class="user-meta__role">System Administrator</span>
-                    </div>
                     <partial name="_LoginPartial" />
                 </div>
             }

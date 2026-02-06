@@ -1,4 +1,5 @@
 using CSHarpCHarles2.Data;
+using CSHarpCHarles2.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,8 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services
-    .AddDefaultIdentity<IdentityUser>(options =>
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     {
         options.SignIn.RequireConfirmedAccount = false;
         options.User.RequireUniqueEmail = true;

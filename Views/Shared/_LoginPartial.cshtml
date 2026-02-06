@@ -1,23 +1,26 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using CSHarpCHarles2.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
-<ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <span class="nav-link text-dark">@User.Identity?.Name</span>
-    </li>
-    <li class="nav-item">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Dashboard", new { area = "" })">
-            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
+    var user = await UserManager.GetUserAsync(User);
+    if (user != null)
+    {
+        var roles = await UserManager.GetRolesAsync(user);
+        var displayName = !string.IsNullOrWhiteSpace(user.DisplayName) ? user.DisplayName : user.UserName ?? "Unknown";
+
+        <div class="user-info">
+            <div class="user-info__name">@displayName</div>
+            <div class="user-info__roles">@string.Join(", ", roles)</div>
+        </div>
+    }
+    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
+        <button type="submit" class="btn btn-outline-secondary">Logout</button>
+    </form>
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+    <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Login</a>
 }
-</ul>

@@ -1,0 +1,58 @@
+@model CSHarpCHarles2.Models.EditUserViewModel
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Edit User</h1>
+            <p class="page-subtitle">Update account details and employment status</p>
+        </div>
+        <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+    </div>
+
+    <section class="card">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DisplayName" class="form-label"></label>
+                <input asp-for="DisplayName" class="form-control" autocomplete="off" />
+                <span asp-validation-for="DisplayName" class="text-danger"></span>
+            </div>
+
+            @if (Model.IsSuperAdmin)
+            {
+                <input type="hidden" asp-for="EmploymentStatus" />
+                <div class="mb-3">
+                    <label asp-for="EmploymentStatus" class="form-label"></label>
+                    <input class="form-control" value="SuperAdmin (not editable)" disabled />
+                    <div class="form-text">SuperAdmin employment status cannot be changed.</div>
+                </div>
+            }
+            else
+            {
+                <div class="mb-3">
+                    <label asp-for="EmploymentStatus" class="form-label"></label>
+                    <select asp-for="EmploymentStatus" class="form-select" asp-items="Html.GetEnumSelectList<CSHarpCHarles2.Models.EmploymentStatus>()"></select>
+                    <span asp-validation-for="EmploymentStatus" class="text-danger"></span>
+                </div>
+            }
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </section>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -11,38 +11,38 @@
     </div>
 
     <div class="grid grid--cards">
-        <article class="metric-card">
+        <a class="metric-card metric-card--link" asp-controller="Projects" asp-action="Index">
             <div class="metric-card__meta">
                 <span>Active Projects</span>
                 <span class="metric-card__delta metric-card__delta--up">+12%</span>
             </div>
             <div class="metric-card__value">2</div>
             <p class="metric-card__note">1 completed • 1 on hold</p>
-        </article>
-        <article class="metric-card">
+        </a>
+        <a class="metric-card metric-card--link" asp-controller="Tasks" asp-action="Index">
             <div class="metric-card__meta">
                 <span>Tasks Completed</span>
                 <span class="metric-card__delta metric-card__delta--up">+8%</span>
             </div>
             <div class="metric-card__value">1/6</div>
             <p class="metric-card__note">2 in progress • <span class="text-danger">5 overdue</span></p>
-        </article>
-        <article class="metric-card">
+        </a>
+        <a class="metric-card metric-card--link" asp-controller="Budget" asp-action="Index">
             <div class="metric-card__meta">
                 <span>Budget Spent</span>
                 <span class="metric-card__delta metric-card__delta--down">+35.6%</span>
             </div>
             <div class="metric-card__value">$480K</div>
             <p class="metric-card__note">of $1.35M total budget</p>
-        </article>
-        <article class="metric-card">
+        </a>
+        <a class="metric-card metric-card--link" asp-controller="Resources" asp-action="Index">
             <div class="metric-card__meta">
                 <span>Available Resources</span>
                 <span class="metric-card__delta metric-card__delta--up">+5%</span>
             </div>
             <div class="metric-card__value">8/8</div>
             <p class="metric-card__note">team members with capacity</p>
-        </article>
+        </a>
     </div>
 
     <div class="grid grid--split">
@@ -52,7 +52,7 @@
                 <a class="link" asp-controller="Projects" asp-action="Index">View all</a>
             </div>
             <div class="list">
-                <div class="list-item">
+                <div class="list-item list-item--bounded">
                     <div class="list-item__title">Mobile App Development</div>
                     <div class="badge-group">
                         <span class="badge badge--info">In Progress</span>
@@ -62,7 +62,7 @@
                         <div class="progress__bar progress__bar--warning" style="width: 42%"></div>
                     </div>
                 </div>
-                <div class="list-item">
+                <div class="list-item list-item--bounded">
                     <div class="list-item__title">Data Analytics Dashboard</div>
                     <div class="badge-group">
                         <span class="badge badge--success">Completed</span>
@@ -81,12 +81,12 @@
                 <a class="link" asp-controller="Tasks" asp-action="Index">View all</a>
             </div>
             <div class="list">
-                <div class="list-item">
+                <div class="list-item list-item--bounded">
                     <div class="list-item__title">Implement shopping cart functionality</div>
                     <div class="list-item__meta">E-Commerce Platform Redesign • John Doe</div>
                     <div class="list-item__meta text-danger">Due: 3/1/2024</div>
                 </div>
-                <div class="list-item">
+                <div class="list-item list-item--bounded">
                     <div class="list-item__title">User authentication flow</div>
                     <div class="list-item__meta">Mobile App Development • Alice Cooper</div>
                     <div class="list-item__meta text-danger">Due: 2/28/2024</div>

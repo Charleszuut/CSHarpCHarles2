@@ -7,5 +7,10 @@ namespace CSHarpCHarles2.Models
         public bool EmailConfirmed { get; set; }
         public bool IsLockedOut { get; set; }
         public string RolesDisplay { get; set; } = string.Empty;
+        public string DisplayName { get; set; } = string.Empty;
+
+        public string DepartmentDisplay { get; set; } = string.Empty;
+
+        public EmploymentStatus EmploymentStatus { get; set; } = EmploymentStatus.Active;
     }
 }
