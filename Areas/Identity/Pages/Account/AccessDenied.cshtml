@@ -1,0 +1,18 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Access Denied</h1>
+            <p class="page-subtitle">You do not have permission to view this page.</p>
+        </div>
+    </div>
+    <div class="card card--soft">
+        <p class="text-muted mb-2">Please contact the system administrator if you believe this is an error.</p>
+        <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Index">Return to Dashboard</a>
+    </div>
+</section>

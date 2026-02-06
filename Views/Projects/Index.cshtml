@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Projects</h1>
+            <p class="page-subtitle">Manage and monitor all software development projects</p>
+        </div>
+        <button class="btn btn-primary">+ New Project</button>
+    </div>
+
+    <div class="filter-bar">
+        <input class="form-control" placeholder="Search projects..." />
+        <select class="form-select">
+            <option>All Status</option>
+        </select>
+        <select class="form-select">
+            <option>All Priority</option>
+        </select>
+    </div>
+
+    <div class="grid grid--stats">
+        <article class="stat-card"><span>Total Projects</span><strong>5</strong></article>
+        <article class="stat-card"><span>In Progress</span><strong class="text-primary">2</strong></article>
+        <article class="stat-card"><span>Completed</span><strong class="text-success">1</strong></article>
+        <article class="stat-card"><span>At Risk</span><strong class="text-warning">2</strong></article>
+    </div>
+
+    <div class="grid grid--cards">
+        <article class="project-card">
+            <div class="project-card__header">
+                <h3>E-Commerce Platform Redesign</h3>
+                <span class="badge badge--warning">High</span>
+            </div>
+            <p>Complete overhaul of the customer-facing e-commerce platform with improved UX and performance optimizations.</p>
+            <span class="badge badge--info">In Progress</span>
+            <div class="progress"><div class="progress__bar progress__bar--warning" style="width: 62%"></div></div>
+            <div class="project-card__meta">
+                <div>Duration<br /><strong>1/15/2024 - 6/30/2024</strong></div>
+                <div>Budget<br /><strong>$145,000 / $250,000</strong></div>
+            </div>
+            <div class="project-card__owner">
+                <span>SJ</span>
+                <div>
+                    <strong>Sarah Johnson</strong>
+                    <div class="text-muted">Lead Product Manager</div>
+                </div>
+            </div>
+        </article>
+        <article class="project-card">
+            <div class="project-card__header">
+                <h3>Mobile App Development</h3>
+                <span class="badge badge--danger">Critical</span>
+            </div>
+            <p>Native mobile application for iOS and Android platforms.</p>
+            <span class="badge badge--info">In Progress</span>
+            <div class="progress"><div class="progress__bar" style="width: 45%"></div></div>
+            <div class="project-card__meta">
+                <div>Duration<br /><strong>2/1/2024 - 8/15/2024</strong></div>
+                <div>Budget<br /><strong>$120,000 / $350,000</strong></div>
+            </div>
+            <div class="project-card__owner">
+                <span>DC</span>
+                <div>
+                    <strong>David Chen</strong>
+                    <div class="text-muted">Mobile Engineering</div>
+                </div>
+            </div>
+        </article>
+        <article class="project-card">
+            <div class="project-card__header">
+                <h3>API Gateway Implementation</h3>
+                <span class="badge badge--neutral">Medium</span>
+            </div>
+            <p>Centralized API gateway for microservices architecture.</p>
+            <span class="badge badge--muted">Planning</span>
+            <div class="progress"><div class="progress__bar progress__bar--danger" style="width: 15%"></div></div>
+            <div class="project-card__meta">
+                <div>Duration<br /><strong>4/1/2024 - 9/30/2024</strong></div>
+                <div>Budget<br /><strong>$15,000 / $180,000</strong></div>
+            </div>
+            <div class="project-card__owner">
+                <span>LA</span>
+                <div>
+                    <strong>Lisa Anderson</strong>
+                    <div class="text-muted">Platform Architect</div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>

@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Tasks</h1>
+            <p class="page-subtitle">Manage and track all project tasks</p>
+        </div>
+        <div class="page-actions">
+            <button class="btn btn-outline-secondary">Board</button>
+            <button class="btn btn-outline-secondary">List</button>
+            <button class="btn btn-primary">+ New Task</button>
+        </div>
+    </div>
+
+    <div class="filter-bar">
+        <input class="form-control" placeholder="Search tasks..." />
+        <select class="form-select">
+            <option>All Status</option>
+        </select>
+        <select class="form-select">
+            <option>All Priority</option>
+        </select>
+    </div>
+
+    <div class="grid grid--stats">
+        <article class="stat-card"><span>To Do</span><strong>2</strong></article>
+        <article class="stat-card"><span>In Progress</span><strong class="text-primary">2</strong></article>
+        <article class="stat-card"><span>In Review</span><strong class="text-warning">1</strong></article>
+        <article class="stat-card"><span>Completed</span><strong class="text-success">1</strong></article>
+    </div>
+
+    <div class="kanban">
+        <div class="kanban-column">
+            <div class="kanban-column__title">To Do</div>
+            <div class="kanban-card">
+                <h3>Push notification system</h3>
+                <p>Set up Firebase Cloud Messaging for push notifications.</p>
+                <div class="kanban-meta">Mobile App Development • <span class="text-danger">3/15/2024</span></div>
+                <span class="badge badge--warning">Medium</span>
+            </div>
+            <div class="kanban-card">
+                <h3>API documentation</h3>
+                <p>Write comprehensive API documentation using OpenAPI spec.</p>
+                <div class="kanban-meta">API Gateway Implementation • <span class="text-danger">4/30/2024</span></div>
+                <span class="badge badge--warning">Medium</span>
+            </div>
+        </div>
+        <div class="kanban-column">
+            <div class="kanban-column__title">In Progress</div>
+            <div class="kanban-card">
+                <h3>Implement shopping cart functionality</h3>
+                <p>Develop frontend and backend for shopping cart with real-time updates.</p>
+                <div class="kanban-meta">E-Commerce Platform Redesign • <span class="text-danger">3/1/2024</span></div>
+                <span class="badge badge--danger">Critical</span>
+                <div class="progress"><div class="progress__bar" style="width: 65%"></div></div>
+                <div class="text-muted">45h / 60h</div>
+            </div>
+            <div class="kanban-card">
+                <h3>User authentication flow</h3>
+                <p>Implement secure authentication with biometric support.</p>
+                <div class="kanban-meta">Mobile App Development • <span class="text-danger">2/28/2024</span></div>
+                <span class="badge badge--danger">Critical</span>
+                <div class="progress"><div class="progress__bar" style="width: 60%"></div></div>
+                <div class="text-muted">30h / 50h</div>
+            </div>
+        </div>
+        <div class="kanban-column">
+            <div class="kanban-column__title">In Review</div>
+            <div class="kanban-card">
+                <h3>Payment gateway integration</h3>
+                <p>Integrate Stripe payment processing.</p>
+                <div class="kanban-meta">E-Commerce Platform Redesign • <span class="text-danger">2/25/2024</span></div>
+                <span class="badge badge--warning">High</span>
+                <div class="progress"><div class="progress__bar" style="width: 90%"></div></div>
+                <div class="text-muted">35h / 38h</div>
+            </div>
+        </div>
+        <div class="kanban-column">
+            <div class="kanban-column__title">Completed</div>
+            <div class="kanban-card">
+                <h3>Design new product listing page</h3>
+                <p>Create mockups and prototypes for the new product listing interface.</p>
+                <div class="kanban-meta">E-Commerce Platform Redesign • <span class="text-success">2/15/2024</span></div>
+                <span class="badge badge--warning">High</span>
+                <div class="progress"><div class="progress__bar progress__bar--success" style="width: 100%"></div></div>
+                <div class="text-muted">38h / 40h</div>
+            </div>
+        </div>
+    </div>
+</section>

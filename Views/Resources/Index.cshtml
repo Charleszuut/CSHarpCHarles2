@@ -1,0 +1,151 @@
+@{
+    ViewData["Title"] = "Resources";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Resources</h1>
+            <p class="page-subtitle">Manage team members and resource allocation</p>
+        </div>
+        <button class="btn btn-primary">+ Add Resource</button>
+    </div>
+
+    <div class="filter-bar">
+        <input class="form-control" placeholder="Search resources..." />
+        <select class="form-select">
+            <option>All Roles</option>
+        </select>
+        <select class="form-select">
+            <option>All Availability</option>
+        </select>
+    </div>
+
+    <div class="grid grid--stats">
+        <article class="stat-card"><span>Total Resources</span><strong>8</strong></article>
+        <article class="stat-card"><span>Available</span><strong class="text-success">8</strong></article>
+        <article class="stat-card"><span>Avg. Availability</span><strong class="text-primary">86%</strong></article>
+        <article class="stat-card"><span>Total Assignments</span><strong class="text-warning">10</strong></article>
+    </div>
+
+    <div class="grid grid--cards">
+        <article class="resource-card">
+            <div class="resource-card__header">
+                <span class="avatar">SJ</span>
+                <div>
+                    <strong>Sarah Johnson</strong>
+                    <div class="text-muted">Project Manager</div>
+                    <div class="text-muted">sarah.johnson@csharpcharles.com</div>
+                </div>
+            </div>
+            <div class="resource-card__progress">
+                <span>Availability</span>
+                <div class="progress"><div class="progress__bar progress__bar--success" style="width: 80%"></div></div>
+                <span>80%</span>
+            </div>
+            <div class="resource-card__meta">
+                <div>Assigned Projects<strong>2</strong></div>
+                <div>Skills
+                    <div class="pill-group">
+                        <span class="pill">Agile</span>
+                        <span class="pill">Scrum</span>
+                        <span class="pill">Risk Management</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="resource-card">
+            <div class="resource-card__header">
+                <span class="avatar">JD</span>
+                <div>
+                    <strong>John Doe</strong>
+                    <div class="text-muted">Software Developer</div>
+                    <div class="text-muted">john.doe@csharpcharles.com</div>
+                </div>
+            </div>
+            <div class="resource-card__progress">
+                <span>Availability</span>
+                <div class="progress"><div class="progress__bar progress__bar--success" style="width: 90%"></div></div>
+                <span>90%</span>
+            </div>
+            <div class="resource-card__meta">
+                <div>Assigned Projects<strong>1</strong></div>
+                <div>Skills
+                    <div class="pill-group">
+                        <span class="pill">C#</span>
+                        <span class="pill">ASP.NET</span>
+                        <span class="pill">React</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="resource-card">
+            <div class="resource-card__header">
+                <span class="avatar">JS</span>
+                <div>
+                    <strong>Jane Smith</strong>
+                    <div class="text-muted">Designer</div>
+                    <div class="text-muted">jane.smith@csharpcharles.com</div>
+                </div>
+            </div>
+            <div class="resource-card__progress">
+                <span>Availability</span>
+                <div class="progress"><div class="progress__bar progress__bar--success" style="width: 100%"></div></div>
+                <span>100%</span>
+            </div>
+            <div class="resource-card__meta">
+                <div>Assigned Projects<strong>1</strong></div>
+                <div>Skills
+                    <div class="pill-group">
+                        <span class="pill">UI/UX</span>
+                        <span class="pill">Figma</span>
+                        <span class="pill">Adobe XD</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <section class="card">
+        <div class="card__header">
+            <h2>Resource Allocation Overview</h2>
+        </div>
+        <div class="table">
+            <div class="table__row table__row--header">
+                <div>Name</div>
+                <div>Role</div>
+                <div>Projects</div>
+                <div>Availability</div>
+                <div>Status</div>
+            </div>
+            <div class="table__row">
+                <div>Sarah Johnson<br /><span class="text-muted">sarah.johnson@csharpcharles.com</span></div>
+                <div>Project Manager</div>
+                <div>2 projects</div>
+                <div><div class="progress"><div class="progress__bar progress__bar--success" style="width: 80%"></div></div>80%</div>
+                <div><span class="badge badge--success">Available</span></div>
+            </div>
+            <div class="table__row">
+                <div>John Doe<br /><span class="text-muted">john.doe@csharpcharles.com</span></div>
+                <div>Software Developer</div>
+                <div>1 project</div>
+                <div><div class="progress"><div class="progress__bar progress__bar--success" style="width: 90%"></div></div>90%</div>
+                <div><span class="badge badge--success">Available</span></div>
+            </div>
+            <div class="table__row">
+                <div>Jane Smith<br /><span class="text-muted">jane.smith@csharpcharles.com</span></div>
+                <div>Designer</div>
+                <div>1 project</div>
+                <div><div class="progress"><div class="progress__bar progress__bar--success" style="width: 100%"></div></div>100%</div>
+                <div><span class="badge badge--success">Available</span></div>
+            </div>
+            <div class="table__row">
+                <div>David Chen<br /><span class="text-muted">david.chen@csharpcharles.com</span></div>
+                <div>Project Manager</div>
+                <div>2 projects</div>
+                <div><div class="progress"><div class="progress__bar progress__bar--warning" style="width: 60%"></div></div>60%</div>
+                <div><span class="badge badge--warning">Moderate</span></div>
+            </div>
+        </div>
+    </section>
+</section>

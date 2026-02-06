@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CSharpCharles</title>
+    <script type="importmap"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CSHarpCHarles2.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="app-header">
+        <div class="container-fluid app-header__inner">
+            <div class="brand">
+                <div class="brand__logo">CS</div>
+                <div class="brand__text">
+                    <span class="brand__title">CSharpCharles</span>
+                    <span class="brand__subtitle">Project Management</span>
+                </div>
+            </div>
+            @if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <nav class="app-nav">
+                    <a class="app-nav__link" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("ProjectManager"))
+                    {
+                        <a class="app-nav__link" asp-area="" asp-controller="Projects" asp-action="Index">Projects</a>
+                    }
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("ProjectManager") || User.IsInRole("TeamMember"))
+                    {
+                        <a class="app-nav__link" asp-area="" asp-controller="Tasks" asp-action="Index">Tasks</a>
+                    }
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("ProjectManager"))
+                    {
+                        <a class="app-nav__link" asp-area="" asp-controller="Resources" asp-action="Index">Resources</a>
+                    }
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("FinanceOfficer"))
+                    {
+                        <a class="app-nav__link" asp-area="" asp-controller="Budget" asp-action="Index">Budget</a>
+                    }
+                    @if (User.IsInRole("SuperAdmin"))
+                    {
+                        <a class="app-nav__link" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                    }
+                </nav>
+                <div class="app-header__user">
+                    <div class="user-meta">
+                        <span class="user-meta__name">@User.Identity?.Name</span>
+                        <span class="user-meta__role">System Administrator</span>
+                    </div>
+                    <partial name="_LoginPartial" />
+                </div>
+            }
+            else
+            {
+                <div class="app-header__user">
+                    <partial name="_LoginPartial" />
+                </div>
+            }
+        </div>
+    </header>
+    <main role="main" class="app-body">
+        @RenderBody()
+    </main>
+
+    <footer class="app-footer">
+        <div class="container-fluid">
+            &copy; 2026 - Joaquin_Final_Project - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

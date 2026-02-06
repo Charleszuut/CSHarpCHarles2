@@ -1,0 +1,46 @@
+@model IEnumerable<CSHarpCHarles2.Models.UsersListItemViewModel>
+@{ 
+    ViewData["Title"] = "Users";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Users</h1>
+            <p class="page-subtitle">Create and manage department accounts</p>
+        </div>
+        <a class="btn btn-primary" asp-action="Create">+ Create Account</a>
+    </div>
+
+    @if (TempData["StatusMessage"] is string message && !string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success">@message</div>
+    }
+
+    <section class="card">
+        <div class="card__header">
+            <h2>All Accounts</h2>
+        </div>
+        <div class="table">
+            <div class="table__row table__row--header" style="grid-template-columns: 2fr 1fr 1fr 2fr 1fr;">
+                <div>Email</div>
+                <div>Email Confirmed</div>
+                <div>Lockout</div>
+                <div>Roles</div>
+                <div></div>
+            </div>
+            @foreach (var user in Model)
+            {
+                <div class="table__row" style="grid-template-columns: 2fr 1fr 1fr 2fr 1fr;">
+                    <div>@user.Email</div>
+                    <div>@user.EmailConfirmed</div>
+                    <div>@(user.IsLockedOut ? "Locked" : "Active")</div>
+                    <div>@user.RolesDisplay</div>
+                    <div>
+                        <a class="btn btn-sm btn-outline-secondary" asp-action="ResetPassword" asp-route-id="@user.Id">Reset Password</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+</section>

@@ -1,0 +1,156 @@
+@{
+    ViewData["Title"] = "Budget";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Budget Management</h1>
+            <p class="page-subtitle">Track and manage project budgets and financial oversight</p>
+        </div>
+    </div>
+
+    <div class="grid grid--stats">
+        <article class="stat-card"><span>Total Budget</span><strong>$1,350K</strong></article>
+        <article class="stat-card"><span>Total Spent</span><strong class="text-primary">$480K</strong><div class="text-muted">35.6% utilized</div></article>
+        <article class="stat-card"><span>Remaining</span><strong class="text-success">$870K</strong></article>
+        <article class="stat-card"><span>At Risk</span><strong class="text-warning">1</strong></article>
+    </div>
+
+    <section class="card">
+        <div class="card__header"><h2>Budget by Category</h2></div>
+        <div class="grid grid--cards">
+            <article class="budget-card">
+                <span class="text-muted">Labor</span>
+                <strong>$110K / $110K</strong>
+                <div class="progress"><div class="progress__bar progress__bar--danger" style="width: 100%"></div></div>
+                <span class="text-danger">100% utilized</span>
+            </article>
+            <article class="budget-card">
+                <span class="text-muted">Software</span>
+                <strong>$5K / $5K</strong>
+                <div class="progress"><div class="progress__bar progress__bar--warning" style="width: 95%"></div></div>
+                <span class="text-danger">95% utilized</span>
+            </article>
+            <article class="budget-card">
+                <span class="text-muted">Hardware</span>
+                <strong>$8K / $8K</strong>
+                <div class="progress"><div class="progress__bar progress__bar--warning" style="width: 94%"></div></div>
+                <span class="text-danger">94% utilized</span>
+            </article>
+            <article class="budget-card">
+                <span class="text-muted">Services</span>
+                <strong>$1K / $1K</strong>
+                <div class="progress"><div class="progress__bar progress__bar--danger" style="width: 100%"></div></div>
+                <span class="text-danger">100% utilized</span>
+            </article>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card__header"><h2>Project Budget Summary</h2></div>
+        <div class="table">
+            <div class="table__row table__row--header">
+                <div>Project</div>
+                <div>Status</div>
+                <div>Budget</div>
+                <div>Spent</div>
+                <div>Remaining</div>
+                <div>Utilization</div>
+                <div>Risk Level</div>
+            </div>
+            <div class="table__row">
+                <div>E-Commerce Platform Redesign<br /><span class="text-muted">Sarah Johnson</span></div>
+                <div><span class="badge badge--info">In Progress</span></div>
+                <div>$250,000</div>
+                <div>$145,000</div>
+                <div>$105,000</div>
+                <div><div class="progress"><div class="progress__bar" style="width: 58%"></div></div></div>
+                <div><span class="badge badge--success">Low Risk</span></div>
+            </div>
+            <div class="table__row">
+                <div>Mobile App Development<br /><span class="text-muted">David Chen</span></div>
+                <div><span class="badge badge--info">In Progress</span></div>
+                <div>$350,000</div>
+                <div>$120,000</div>
+                <div>$230,000</div>
+                <div><div class="progress"><div class="progress__bar" style="width: 35%"></div></div></div>
+                <div><span class="badge badge--success">Low Risk</span></div>
+            </div>
+            <div class="table__row">
+                <div>API Gateway Implementation<br /><span class="text-muted">Lisa Anderson</span></div>
+                <div><span class="badge badge--muted">Planning</span></div>
+                <div>$180,000</div>
+                <div>$15,000</div>
+                <div>$165,000</div>
+                <div><div class="progress"><div class="progress__bar" style="width: 10%"></div></div></div>
+                <div><span class="badge badge--success">Low Risk</span></div>
+            </div>
+            <div class="table__row">
+                <div>Data Analytics Dashboard<br /><span class="text-muted">Sarah Johnson</span></div>
+                <div><span class="badge badge--success">Completed</span></div>
+                <div>$120,000</div>
+                <div>$115,000</div>
+                <div>$5,000</div>
+                <div><div class="progress"><div class="progress__bar progress__bar--danger" style="width: 96%"></div></div></div>
+                <div><span class="badge badge--danger">High Risk</span></div>
+            </div>
+            <div class="table__row">
+                <div>Cloud Migration<br /><span class="text-muted">David Chen</span></div>
+                <div><span class="badge badge--neutral">On Hold</span></div>
+                <div>$450,000</div>
+                <div>$85,000</div>
+                <div>$365,000</div>
+                <div><div class="progress"><div class="progress__bar" style="width: 20%"></div></div></div>
+                <div><span class="badge badge--success">Low Risk</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card__header"><h2>Detailed Transactions</h2></div>
+        <div class="filter-bar filter-bar--compact">
+            <input class="form-control" placeholder="Filter by project..." />
+            <select class="form-select"><option>All Projects</option></select>
+            <select class="form-select"><option>All Categories</option></select>
+        </div>
+        <div class="table">
+            <div class="table__row table__row--header">
+                <div>Date</div>
+                <div>Project</div>
+                <div>Category</div>
+                <div>Description</div>
+                <div>Budgeted</div>
+                <div>Actual</div>
+                <div>Variance</div>
+            </div>
+            <div class="table__row">
+                <div>1/31/2024</div>
+                <div>E-Commerce Platform Redesign</div>
+                <div><span class="badge badge--info">Labor</span></div>
+                <div>Development team salaries - January</div>
+                <div>$45,000</div>
+                <div>$45,000</div>
+                <div>$0</div>
+            </div>
+            <div class="table__row">
+                <div>1/15/2024</div>
+                <div>E-Commerce Platform Redesign</div>
+                <div><span class="badge badge--info">Software</span></div>
+                <div>Design tools and licenses</div>
+                <div>$5,000</div>
+                <div>$4,800</div>
+                <div class="text-danger">-$200</div>
+            </div>
+            <div class="table__row">
+                <div>2/8/2024</div>
+                <div>Mobile App Development</div>
+                <div><span class="badge badge--info">Labor</span></div>
+                <div>Mobile development team - February</div>
+                <div>$50,000</div>
+                <div>$50,000</div>
+                <div>$0</div>
+            </div>
+        </div>
+    </section>
+</section>

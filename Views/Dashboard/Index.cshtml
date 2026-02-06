@@ -1,0 +1,129 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Overview of all projects and key metrics</p>
+        </div>
+    </div>
+
+    <div class="grid grid--cards">
+        <article class="metric-card">
+            <div class="metric-card__meta">
+                <span>Active Projects</span>
+                <span class="metric-card__delta metric-card__delta--up">+12%</span>
+            </div>
+            <div class="metric-card__value">2</div>
+            <p class="metric-card__note">1 completed • 1 on hold</p>
+        </article>
+        <article class="metric-card">
+            <div class="metric-card__meta">
+                <span>Tasks Completed</span>
+                <span class="metric-card__delta metric-card__delta--up">+8%</span>
+            </div>
+            <div class="metric-card__value">1/6</div>
+            <p class="metric-card__note">2 in progress • <span class="text-danger">5 overdue</span></p>
+        </article>
+        <article class="metric-card">
+            <div class="metric-card__meta">
+                <span>Budget Spent</span>
+                <span class="metric-card__delta metric-card__delta--down">+35.6%</span>
+            </div>
+            <div class="metric-card__value">$480K</div>
+            <p class="metric-card__note">of $1.35M total budget</p>
+        </article>
+        <article class="metric-card">
+            <div class="metric-card__meta">
+                <span>Available Resources</span>
+                <span class="metric-card__delta metric-card__delta--up">+5%</span>
+            </div>
+            <div class="metric-card__value">8/8</div>
+            <p class="metric-card__note">team members with capacity</p>
+        </article>
+    </div>
+
+    <div class="grid grid--split">
+        <section class="card">
+            <div class="card__header">
+                <h2>Projects at Risk</h2>
+                <a class="link" asp-controller="Projects" asp-action="Index">View all</a>
+            </div>
+            <div class="list">
+                <div class="list-item">
+                    <div class="list-item__title">Mobile App Development</div>
+                    <div class="badge-group">
+                        <span class="badge badge--info">In Progress</span>
+                        <span class="badge badge--danger">Critical</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__bar progress__bar--warning" style="width: 42%"></div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item__title">Data Analytics Dashboard</div>
+                    <div class="badge-group">
+                        <span class="badge badge--success">Completed</span>
+                        <span class="badge badge--warning">Medium</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__bar progress__bar--success" style="width: 96%"></div>
+                    </div>
+                    <div class="list-item__meta text-danger">Budget utilization: 96%</div>
+                </div>
+            </div>
+        </section>
+        <section class="card">
+            <div class="card__header">
+                <h2>Critical Tasks</h2>
+                <a class="link" asp-controller="Tasks" asp-action="Index">View all</a>
+            </div>
+            <div class="list">
+                <div class="list-item">
+                    <div class="list-item__title">Implement shopping cart functionality</div>
+                    <div class="list-item__meta">E-Commerce Platform Redesign • John Doe</div>
+                    <div class="list-item__meta text-danger">Due: 3/1/2024</div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item__title">User authentication flow</div>
+                    <div class="list-item__meta">Mobile App Development • Alice Cooper</div>
+                    <div class="list-item__meta text-danger">Due: 2/28/2024</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="card">
+        <div class="card__header">
+            <h2>Active Projects Overview</h2>
+        </div>
+        <div class="table">
+            <div class="table__row table__row--header">
+                <div>Project Name</div>
+                <div>Status</div>
+                <div>Manager</div>
+                <div>Progress</div>
+                <div>Budget</div>
+                <div>Due Date</div>
+            </div>
+            <div class="table__row">
+                <div>E-Commerce Platform Redesign</div>
+                <div><span class="badge badge--info">In Progress</span></div>
+                <div>Sarah Johnson</div>
+                <div><div class="progress"><div class="progress__bar" style="width: 45%"></div></div></div>
+                <div>$145,000 / $250,000</div>
+                <div>6/30/2024</div>
+            </div>
+            <div class="table__row">
+                <div>Mobile App Development</div>
+                <div><span class="badge badge--info">In Progress</span></div>
+                <div>David Chen</div>
+                <div><div class="progress"><div class="progress__bar" style="width: 35%"></div></div></div>
+                <div>$120,000 / $350,000</div>
+                <div>8/15/2024</div>
+            </div>
+        </div>
+    </section>
+</section>
