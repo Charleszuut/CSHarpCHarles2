@@ -430,3 +430,4 @@ C:\Projects\IT15\CSHarpCHarles2\CSHarpCHarles2\bin\Debug\net10.0\runtimes\win-ar
 C:\Projects\IT15\CSHarpCHarles2\CSHarpCHarles2\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Projects\IT15\CSHarpCHarles2\CSHarpCHarles2\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Projects\IT15\CSHarpCHarles2\CSHarpCHarles2\obj\Debug\net10.0\compressed\2lzklv7lxp-{0}-xs0v8moimg-xs0v8moimg.gz
+C:\Projects\IT15\CSHarpCHarles2\CSHarpCHarles2\obj\Debug\net10.0\CSHarpCHarles2.sourcelink.json
