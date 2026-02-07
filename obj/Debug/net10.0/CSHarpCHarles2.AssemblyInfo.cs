@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSHarpCHarles2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5fc0e99262a3eac2b4f6b31d1c4b9d255cfa7a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e31621eaf5358ebd1039cf07317a31d23a9f42d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSHarpCHarles2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSHarpCHarles2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

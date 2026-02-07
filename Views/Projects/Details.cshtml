@@ -1,0 +1,96 @@
+@model CSHarpCHarles2.Models.ProjectDetailsViewModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="page-shell">
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">@Model.Title</h1>
+        </div>
+        <div class="page-actions">
+            <a class="btn btn-outline-secondary" asp-action="Index">Back to Projects</a>
+        </div>
+    </div>
+
+    <div class="grid grid--split">
+        <section class="card project-overview-card">
+            <div class="card__header">
+                <h2>Project Overview</h2>
+            </div>
+
+            <div class="project-desc">
+                <div class="project-desc__label">Project Description</div>
+                <div class="project-desc__text">@Model.Description</div>
+            </div>
+
+            <div class="badge-group" style="margin-top: 10px;">
+                <span class="badge badge--info">@Model.Status</span>
+                @if (Model.Priority.Equals("Critical", StringComparison.OrdinalIgnoreCase))
+                {
+                    <span class="badge badge--danger">@Model.Priority</span>
+                }
+                else if (Model.Priority.Equals("High", StringComparison.OrdinalIgnoreCase))
+                {
+                    <span class="badge badge--warning">@Model.Priority</span>
+                }
+                else
+                {
+                    <span class="badge badge--neutral">@Model.Priority</span>
+                }
+            </div>
+
+            <div class="project-overview__bottom">
+                <div class="project-card__status">
+                    <span class="text-muted">Progress</span>
+                    <span class="project-card__percent">@Model.ProgressPercent%</span>
+                </div>
+                <div class="progress"><div class="progress__bar" style="width: @Model.ProgressPercent%"></div></div>
+
+                <div class="project-card__divider"></div>
+
+                <div class="project-card__details">
+                    <div class="project-kv">
+                        <div class="project-kv__label">Duration</div>
+                        <div class="project-kv__value">@Model.StartDate.ToString("M/d/yyyy") - @Model.EndDate.ToString("M/d/yyyy")</div>
+                    </div>
+                    <div class="project-kv">
+                        <div class="project-kv__label">Budget</div>
+                        <div class="project-kv__value">@Model.BudgetSpent.ToString("C0") / @Model.BudgetTotal.ToString("C0")</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card__header">
+                <h2>Project Manager</h2>
+            </div>
+
+            <div class="project-card__owner">
+                <span>@Model.ProjectManagerInitials</span>
+                <div>
+                    <strong>@Model.ProjectManagerName</strong>
+                    <div class="text-muted">@Model.ProjectManagerRole</div>
+                </div>
+            </div>
+
+            <div class="project-card__divider"></div>
+
+            <div class="card__header" style="margin-bottom: 8px;">
+                <h2>Assigned Tasks</h2>
+            </div>
+
+            <div class="list" style="gap: 10px;">
+                @foreach (var task in Model.AssignedTasks)
+                {
+                    <div class="list-item list-item--bounded">
+                        <div class="list-item__title">@task.Title</div>
+                        <div class="list-item__meta">Assigned to: @task.AssignedTo</div>
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</section>
